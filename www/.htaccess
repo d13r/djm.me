@@ -1,8 +1,11 @@
-# For the development server - emulate how Netlify works (see _redirects)
 RewriteEngine on
 
 RewriteRule ^$ - [R=410,L]
 
+# Dotfiles setup script
+RewriteRule ^cfg$ https://raw.githubusercontent.com/davejamesmiller/dotfiles/main/.dotfiles/cfg [R,L]
+
+# Catch-all -> "Gone" page
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ - [R=410,L]

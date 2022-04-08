@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  php:
+    build: .
+    image: registry.djm.me/djm.me:${TAG:-latest}
+    restart: unless-stopped
+    volumes:
+      - ./www:/var/www/html
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.djm-me-http.entryPoints=http
+      - traefik.http.routers.djm-me-http.rule=Host(`$DOMAIN`) || Host(`www.$DOMAIN`)
+      - traefik.http.routers.djm-me-http.middlewares=redirect-www-to-root,redirect-to-https
+      - traefik.http.routers.djm-me-https.entryPoints=https
+      - traefik.http.routers.djm-me-https.tls=true
+      - traefik.http.routers.djm-me-https.rule=Host(`$DOMAIN`) || Host(`www.$DOMAIN`)
+      - traefik.http.routers.djm-me-https.middlewares=redirect-www-to-root
+
+networks:
+  default:
+    name: traefik
