@@ -2,10 +2,8 @@ version: '3.7'
 
 services:
   php:
-    build: .
+    image: registry.djm.me/djm.me:${TAG}
     restart: unless-stopped
-    volumes:
-      - ./www:/var/www/html
     labels:
       - traefik.enable=true
       - traefik.http.routers.djm-me-http.entryPoints=http
