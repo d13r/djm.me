@@ -21,6 +21,8 @@ services:
       - traefik.http.routers.davejamesmiller-com-https.entryPoints=https
       - traefik.http.routers.davejamesmiller-com-https.tls=true
       - traefik.http.routers.davejamesmiller-com-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.davejamesmiller-com-https.tls.domains[0].main=davejamesmiller.com
+      - traefik.http.routers.davejamesmiller-com-https.tls.domains[0].sans=www.davejamesmiller.com
       - traefik.http.routers.davejamesmiller-com-https.rule=Host(`davejamesmiller.com`) || Host(`www.davejamesmiller.com`)
       - traefik.http.routers.davejamesmiller-com-https.middlewares=redirect-to-djm-me
       - traefik.http.middlewares.redirect-to-djm-me.redirectRegex.permanent=true
