@@ -22,12 +22,12 @@ steps:
       DOMAIN: djm.me
       REGISTRY_PASSWORD:
         from_secret: registry_password
+      TAG: ${DRONE_COMMIT}
     volumes:
       - name: docker.sock
         path: /var/run/docker.sock
     commands:
       - echo $REGISTRY_PASSWORD | docker login -u droneci --password-stdin registry.djm.me
-      - docker pull registry.djm.me/djm.me:${DRONE_DEPLOY_TO:-production}
       - docker-compose up -d
 
 # Note: This requires the project to be marked as Trusted in Drone CI
