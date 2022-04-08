@@ -28,7 +28,7 @@ steps:
         path: /var/run/docker.sock
     commands:
       - echo $REGISTRY_PASSWORD | docker login -u droneci --password-stdin registry.djm.me
-      - docker-compose up -d -f docker-compose.${DRONE_DEPLOY_TO:-production}.yml
+      - docker-compose -f docker-compose.${DRONE_DEPLOY_TO:-production}.yml up -d
 
 # Note: This requires the project to be marked as Trusted in Drone CI
 volumes:
