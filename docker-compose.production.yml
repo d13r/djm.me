@@ -14,6 +14,18 @@ services:
       - traefik.http.routers.djm-me-https.rule=Host(`$DOMAIN`) || Host(`www.$DOMAIN`)
       - traefik.http.routers.djm-me-https.middlewares=redirect-www-to-root
 
+      # Old domain
+      - traefik.http.routers.davejamesmiller-com-http.entryPoints=http
+      - traefik.http.routers.davejamesmiller-com-http.rule=Host(`davejamesmiller.com`) || Host(`www.davejamesmiller.com`)
+      - traefik.http.routers.davejamesmiller-com-http.middlewares=redirect-to-djm-me
+      - traefik.http.routers.davejamesmiller-com-https.entryPoints=https
+      - traefik.http.routers.davejamesmiller-com-https.tls=true
+      - traefik.http.routers.davejamesmiller-com-https.rule=Host(`davejamesmiller.com`) || Host(`www.davejamesmiller.com`)
+      - traefik.http.routers.davejamesmiller-com-https.middlewares=redirect-to-djm-me
+      - traefik.http.middlewares.redirect-to-djm-me.redirectRegex.permanent=true
+      - traefik.http.middlewares.redirect-to-djm-me.redirectregex.regex=^https?://.*?/(.*)$$
+      - traefik.http.middlewares.redirect-to-djm-me.redirectregex.replacement=https://$DOMAIN/$${1}
+
 networks:
   default:
     name: traefik
