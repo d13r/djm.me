@@ -5,6 +5,16 @@ RewriteRule ^$ - [R=410,L]
 # Dotfiles setup script
 RewriteRule ^cfg$ https://raw.githubusercontent.com/davejamesmiller/dotfiles/main/.dotfiles/cfg [R,L]
 
+# Canonical redirect
+RewriteCond %{HTTP_HOST} !^djm\.me$
+RewriteCond %{HTTP_HOST} !^djm\.glados\.djm\.me$
+RewriteRule ^(.*)$ https://djm\.me/$1 [R=301,L]
+
+# Always use SSL
+RewriteCond %{HTTPS} !=on
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+Header always setifempty Strict-Transport-Security "max-age=31536000" env=HTTPS
+
 # Catch-all -> "Gone" page
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
