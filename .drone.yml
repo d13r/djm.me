@@ -10,7 +10,7 @@ steps:
   - name: deploy
     image: appleboy/drone-git-push
     settings:
-      remote: dave@summer.djm.me:/home/www/djm.me/repo
+      remote: ssh://dave@summer.djm.me//home/www/djm.me/repo
       ssh_key:
         from_secret: ssh_private_key
       branch: ${DRONE_COMMIT_BRANCH}
