@@ -107,8 +107,3 @@ if $devMode; then
 else
     scripts/permissions-for-live.sh
 fi
-
-# Clear cache
-header 'Clearing cache...'
-scripts/clear-cache.sh
-echo 'Done.'
