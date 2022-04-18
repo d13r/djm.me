@@ -3,7 +3,7 @@ RewriteEngine on
 RewriteRule ^$ - [R=410,L]
 
 # Dotfiles setup script
-RewriteRule ^cfg$ https://raw.githubusercontent.com/davejamesmiller/dotfiles/main/.dotfiles/cfg [R,L]
+RewriteRule ^cfg$ https://git.djm.me/dave/dotfiles/raw/branch/main/.dotfiles/cfg [R,L]
 
 # Canonical redirect
 RewriteCond %{HTTP_HOST} !^djm\.me$
