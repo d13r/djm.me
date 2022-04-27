@@ -1,3 +1,8 @@
+<?php
+http_response_code(410);
+
+date_default_timezone_set('Europe/London');
+?>
 <!DOCTYPE html>
 <html lang="en-GB">
     <head>
@@ -26,7 +31,12 @@
     </head>
     <body>
 
-        <pre>$ sudo rm -rf /*
+
+        <pre>$ date
+<?= htmlspecialchars(date('D d M Y h:i:s A T')) . "\n" ?>
+$ whoami
+dave
+$ sudo rm -rf /*
 $ ls -l
 bash: ls: command not found
 $ exit</pre>

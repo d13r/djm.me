@@ -1,5 +1,5 @@
 # Dave James Miller's Website
 
-[![Build Status](https://ci.djm.me/api/badges/dave/djm.me/status.svg?ref=refs/heads/main)](https://ci.djm.me/dave/djm.me)
+This is a combination of a [YOURLS](https://yourls.org/) plugin and some custom files for my main website.
 
 [https://djm.me/](https://djm.me/)
