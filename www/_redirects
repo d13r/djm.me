@@ -1,5 +1,5 @@
 # Dotfiles setup script
-/cfg  https://raw.githubusercontent.com/davejamesmiller/dotfiles/main/.dotfiles/cfg  302
+/cfg  https://raw.githubusercontent.com/d13r/dotfiles/main/.dotfiles/cfg  302
 
 # Canonical redirects
 https://davejamesmiller.com/*      https://djm.me/:splat 301!
