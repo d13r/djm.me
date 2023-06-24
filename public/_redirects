@@ -1,3 +1,4 @@
+# Short URLs
 /dot    https://raw.githubusercontent.com/d13r/dotfiles/main/.dotfiles/dot    302
 /edit   https://github.com/d13r/djm.me/edit/main/public/_redirects            302
 
@@ -5,5 +6,5 @@
 https://davejamesmiller.com/*      https://djm.me/:splat 301!
 https://www.davejamesmiller.com/*  https://djm.me/:splat 301!
 
-# Everything else
-/*  /410.html  410
+# 404 page
+/*  /404.html  404

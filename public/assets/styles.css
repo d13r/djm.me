@@ -1,0 +1,40 @@
+body {
+    background: #111;
+    color: #ddd;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 1em;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:active,
+a:focus,
+a:hover {
+    color: #fff;
+}
+
+pre {
+    font-family: Fira Code, SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.prompt {
+    color: #0e0;
+    display: inline-block;
+}
+
+.prompt:not(:first-child) {
+    margin-bottom: 0.2em;
+}
+
+.error {
+    color: #f88;
+}

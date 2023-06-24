@@ -1,10 +1,2 @@
 # For the development server - emulate how Netlify works (see _redirects)
-RewriteEngine on
-
-RewriteRule ^$ - [R=410,L]
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ - [R=410,L]
-
-ErrorDocument 410 /410.html
+ErrorDocument 404 /404.html
