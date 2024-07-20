@@ -1,3 +1,6 @@
+# Homepage redirect
+/       https://www.maths.ox.ac.uk/people/dave.miller                         302
+
 # Short URLs
 /dot    https://raw.githubusercontent.com/d13r/dotfiles/main/.dotfiles/dot    302
 /edit   https://github.com/d13r/djm.me/edit/main/public/_redirects            302
@@ -5,6 +8,3 @@
 # Canonical redirects
 https://davejamesmiller.com/*      https://djm.me/:splat 301!
 https://www.davejamesmiller.com/*  https://djm.me/:splat 301!
-
-# 404 page
-/*  /404.html  404
