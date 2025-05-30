@@ -1,2 +1,0 @@
-# For the development server - emulate how Netlify works (see _redirects)
-ErrorDocument 404 /404.html
